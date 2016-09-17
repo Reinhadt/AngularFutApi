@@ -1,0 +1,38 @@
+<lx-tabs>
+	<lx-tab heading="{{titulo}}">
+	 	
+	 		<div class="p+">
+	 			<div class="stats">
+	 				<div class="col-md-6 col-md-offset-6">
+	 					<p class="col-md-4">JJ</p>
+	 					<p class="col-md-4">DG</p>
+	 					<p class="col-md-4 padding-left">PTS</p>
+	 				</div>
+	 			</div>
+				<div ng-repeat="esta in estas.standing">
+					<div class="card tableItem row">
+						<div class="col-md-6">
+							<div class="col-md-1">
+								<p>{{ esta.position }}</p>	
+							</div>
+							
+								<img class="col-md-5" ng-src="{{ esta.crestURI }}" alt="">
+							
+							<div class="name col-md-6 valign">
+									<a href="/equipo/{{ esta._links.team.href | limitTo: 36 : 38 }}"><p>{{ esta.teamName }}</p></a>
+							</div>	
+						</div>
+						
+						<div class="valign col-md-6">
+							<p class="col-md-4">{{ esta.playedGames }}</p>
+							<p class="col-md-4">{{ esta.goalDifference }}</p>
+							<p class="col-md-4">{{ esta.points }}</p>	
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+			
+	</lx-tab>
+</lx-tabs>

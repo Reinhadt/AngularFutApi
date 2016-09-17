@@ -1,0 +1,67 @@
+<lx-tabs>
+	<lx-tab heading="{{ equipos.name }}">
+	 	
+	 		<div class="p+">
+	 		
+	 			<div class="card">
+	 				<img ng-src="{{ equipos.crestUrl }}" alt="" style="width:120px;">
+	 				{{ equipos.name }}
+	 				{{ equipos.code }}	
+					{{ equipos.squadMarketValue }}
+	 			</div>
+	 			
+	 			<div class="card" ng-repeat="fixture in fixtures.fixtures | reverse" ng-if="fixture.status != 'TIMED'" >
+	 					<p>{{ fixture._links.homeTeam.href | limitTo: 38: 41 }}</p>
+	 					<p>{{ fixture.homeTeamName }}</p>
+	 					<p>{{ fixture.result.goalsHomeTeam}}</p>
+	 					<p>{{ fixture.awayTeamName }}</p>
+	 					<p>{{ fixture.result.goalsAwayTeam}}</p>
+	 					<p>{{ fixture.date | date:'dd/MM/yyyy'}}</p>	
+	 					
+	 			</div>
+			</div>
+			
+	</lx-tab>
+	<lx-tab heading="Jugadores">
+		Hola!!
+	</lx-tab>
+</lx-tabs>
+<!--<lx-tabs>
+	<lx-tab heading="Posts">
+		<div class="p+">
+			<div class="card top-space" ng-repeat="post in posts">
+				<div class="p+">
+					<strong class="fs-headline display-block tc-red-900">
+						{{post.title}}
+					</strong>
+					<div class="paragraph fs-body-1 mt+">
+						{{post.body}}
+					</div>
+				</div>
+				<div class="card__actions">
+					<a href="#/post/{{post.id}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Leer más</a>
+					<a href="#/post/edit/{{post.id}}" class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
+					<a ng-click="removePost(post)" class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
+				</div>
+			</div>
+		</div>
+	</lx-tab>
+	<lx-tab heading="Users">
+		<div class="card top-space" ng-repeat="user in users">
+			<div flex-container="row">
+				<div class="card__img card__img--left" style="height:160px;">
+					<img src="imgs/user.jpg" alt="">
+				</div>
+				<div flex-item flex-container="column">
+					<div flex-item>
+						<strong class="fs-headline display-block tc-red-900">{{user.name}}</strong>
+						<strong class="fs-subhead tc-black-2 display-block">{{user.email}}</strong>
+					</div>
+					<div class="card__actions">
+						<a href="#">Ver usuario</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</lx-tab>
+</lx-tabs>-->
